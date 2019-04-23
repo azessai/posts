@@ -1,0 +1,14 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': loveIts > 0,
+'list-group-item-danger': loveIts <0}" >
+  <div style="float: right">{{date | date: 'dd/MM/yyyy, hh:mm a'}}</div>
+  <h3>{{title | titlecase }}</h3>
+  <p>{{content}}</p>
+  <button type="button" [ngClass]="{'btn': true, 'btn-success': true}" (click)="loveIt()">
+      Love It!
+    </button><span>&nbsp;</span>
+  <button type="button" [ngClass]="{'btn': true, 'btn-danger': true}" (click)="dontLoveIt()">
+      Don't love It!
+    </button>
+</li>
+
