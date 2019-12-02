@@ -45,3 +45,4 @@ testem.log
 .DS_Store
 Thumbs.db
 posts_essai_azeddine.zip
+yarn.lock
