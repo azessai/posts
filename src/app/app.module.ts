@@ -33,7 +33,6 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ PostsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
