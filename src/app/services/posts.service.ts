@@ -4,7 +4,11 @@ import { Subject } from 'rxjs';
 import * as firebase from 'firebase/app';
 import 'firebase/database';
 
-@Injectable()
+@Injectable(
+{
+  providedIn: 'root'
+}
+)
 export class PostsService {
 
   posts: Post[] = [];
@@ -49,5 +53,10 @@ export class PostsService {
   }
   savePosts() {
     firebase.database().ref('/posts').set(this.posts);
+  }
+  updatePost(id: number, loveIts: number) {
+    this.posts[id].loveIts = loveIts;
+    this.savePosts();
+    this.emitPosts();
   }
 }

@@ -20,9 +20,11 @@ export class PostListItemComponent implements OnInit {
   }
   loveIt(){
     this.loveIts += 1;
+    this.postsService.updatePost(this.id, this.loveIts);
   }
   dontLoveIt(){
     this.loveIts -= 1;
+    this.postsService.updatePost(this.id, this.loveIts);
   }
   supprimerPost() {
     this.postsService.deletePost(this.id);
