@@ -2,12 +2,12 @@ export class Post {
   title: string;
   content: string;
   loveIts: number;
-  createdAt: Date;
+  createdAt: number;
 
   constructor(title: string, content: string) {
     this.title = title;
     this.content = content;
     this.loveIts = 0;
-    this.createdAt = new Date();
+    this.createdAt = Math.round(new Date().getTime() / 1000);
   }
 }

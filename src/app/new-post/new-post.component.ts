@@ -28,7 +28,6 @@ export class NewPostComponent implements OnInit {
     const content = this.postForm.get('content').value;
     const newPost = new Post(title, content);
     this.postsService.addPost(newPost);
-    console.log('Ajouter : ' + title + ' ' + content);
     this.router.navigate(['/posts']);
   }
 }

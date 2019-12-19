@@ -14,20 +14,7 @@ export class PostsService {
   posts: Post[] = [];
   potsSubject = new Subject<Post[]>();
 
-  constructor() {
-    console.log('INIT Service');
-    // this.getPosts();
-    // this.posts = [
-    //   new Post(
-    //     'Mon premier',
-    //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
-    //   ),
-    //   new Post(
-    //     'Mon second',
-    //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit Rymème la plus moche du monde'
-    //   )
-    // ];
-  }
+  constructor() {}
   emitPosts() {
     this.potsSubject.next(this.posts);
   }
@@ -44,10 +31,7 @@ export class PostsService {
     this.emitPosts();
   }
   addPost(post: Post) {
-    console.log(this.posts);
-    console.log(post);
     this.posts.push(post);
-    console.log(this.posts);
     this.savePosts();
     this.emitPosts();
   }

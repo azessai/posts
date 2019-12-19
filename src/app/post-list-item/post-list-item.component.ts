@@ -7,22 +7,22 @@ import { PostsService } from '../services/posts.service';
   styleUrls: ['./post-list-item.component.scss']
 })
 export class PostListItemComponent implements OnInit {
-
   @Input() title: string;
   @Input() content: string;
   @Input() loveIts: number;
-  @Input() date: Date;
+  @Input() date: string;
   @Input() id: number;
 
-  constructor(private postsService: PostsService ) { }
+  constructor(private postsService: PostsService) {}
 
   ngOnInit() {
+    console.log(this.date + ' - ' + this.title);
   }
-  loveIt(){
+  loveIt() {
     this.loveIts += 1;
     this.postsService.updatePost(this.id, this.loveIts);
   }
-  dontLoveIt(){
+  dontLoveIt() {
     this.loveIts -= 1;
     this.postsService.updatePost(this.id, this.loveIts);
   }

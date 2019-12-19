@@ -1,7 +1,7 @@
 <li class="list-group-item" [ngClass]="{
 'list-group-item-success': loveIts > 0,
 'list-group-item-danger': loveIts <0}">
-  <div style="float: right">{{date | date: 'dd/MM/yyyy, hh:mm a'}}</div>
+  <div style="float: right">{{ date * 1000 | date: 'dd/MM/yyyy, hh:mm a'}}</div>
   <h3>{{title | titlecase }}</h3>
   <p>{{content}}</p>
   <div class="row justify-content-between">
